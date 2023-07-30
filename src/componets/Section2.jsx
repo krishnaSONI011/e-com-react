@@ -49,7 +49,7 @@ let Section2 = () => {
                 </div>
 
             <div>
-                <img src="https://www.snitch.co.in/cdn/shop/files/ezgif.com-gif-maker_2_300x.webp?v=1690211398" alt="" className="w-100"/>
+                <img src="https://www.snitch.co.in/cdn/shop/files/ezgif.com-gif-maker_2_1944x.webp?v=1690211398" alt="" className="w-100"/>
             </div>
         </>
     )
