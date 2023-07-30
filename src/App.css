@@ -1,12 +1,17 @@
 @import url(https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century);
+@import url(https://db.onlinewebfonts.com/c/cdf72388115e4baec39bfc220cc786af?family=Futura-Lig);
 nav {
     padding: 30px 0 30px 0;
 }
+
 
 .font-1 {
     font-family: "Twentieth Century";
 }
 
+.font-2{
+    font-family: "Futura-Lig";
+}
 .topbar {
     background-color: black;
     color: white;
