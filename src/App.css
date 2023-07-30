@@ -1,0 +1,42 @@
+@import url(https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century);
+
+nav{
+padding: 30px 0 30px 0;
+   
+}
+.font-1{
+    font-family: "Twentieth Century";
+
+}
+.topbar{
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding: 10px 0 10px 0;
+}
+.ham-style{
+    border:none;
+    background: transparent;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+}
+.w-1{
+    width: 1.2rem;
+}
+.w-2{
+    width: 2rem;
+}
+.w-3{
+    width: 3rem;
+}
+.w-5{
+    width: 5rem;
+}
+.w-9{
+    width: 13rem;
+}
+.icon-sizer-1{
+    font-size: 1.5rem;
+}
