@@ -1,5 +1,10 @@
 @import url(https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century);
 @import url(https://db.onlinewebfonts.com/c/cdf72388115e4baec39bfc220cc786af?family=Futura-Lig);
+:root{
+    --shine-degree: 120deg;
+    --shine-color: rgba(255, 255, 255, 0.2);
+}
+
 nav {
     padding: 30px 0 30px 0;
 }
@@ -11,6 +16,9 @@ nav {
 
 .font-2{
     font-family: "Futura-Lig";
+}
+.new{
+    font-size: 17px;
 }
 .topbar {
     background-color: black;
@@ -69,3 +77,56 @@ nav {
 p {
     margin: 0 !important;
 }
+
+.size-box{
+    border: 2px solid #d8d8d8;
+
+}
+.mouse-pointer{
+    cursor: pointer;
+}
+.border-bottom{
+    border-bottom: 2px solid rgb(203, 203, 203);
+}
+.shine-button {
+    letter-spacing: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shine-button::after {
+    content: " ";
+    height: 100px;
+    top: 0;
+    transform: skewX(10deg);
+    background: linear-gradient(123deg, #fdfdfd, transparent);
+    filter: blur(30px);
+    position: absolute;
+    width: 60px;
+    opacity: 0.7;
+    right: -100px;
+    
+  }
+  
+  .shine-button:hover::after {
+    animation: shine-hover 1s;
+  }
+  
+ 
+  
+  @keyframes shine-hover {
+    0% {
+      right: -100px;
+    }
+    100% {
+      right: 200px;
+    }
+  }
+  
+  
+  .all-cat-img {
+    transition: transform 0.3s ease;
+  }
+  .all-cat-eff:hover .all-cat-img {
+    transform: scale(1.01);
+  }

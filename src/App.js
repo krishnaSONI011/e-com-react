@@ -4,8 +4,10 @@ import css from "./App.css"
 
 function App() {
   return (
-      <> <Navbar/>
-    <Main/></>
+      <> 
+      <Navbar/>
+      <Main/>
+    </>
    
   );
 }
