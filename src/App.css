@@ -88,6 +88,12 @@ p {
 .border-bottom{
     border-bottom: 2px solid rgb(203, 203, 203);
 }
+.border-top{
+  border-top: 2px solid rgb(203, 203, 203);
+}
+.border-right{
+  border-right: 1px solid rgb(203, 203, 203);
+}
 .shine-button {
     letter-spacing: 3px;
     position: relative;
@@ -119,14 +125,61 @@ p {
       right: -100px;
     }
     100% {
-      right: 200px;
+      right: 500px;
     }
   }
   
-  
+  .space{
+    letter-spacing: 5px;
+  }
   .all-cat-img {
     transition: transform 0.3s ease;
   }
   .all-cat-eff:hover .all-cat-img {
     transform: scale(1.01);
+  }
+  .input input{
+    border: none;
+    border-bottom: 2px black solid;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+  }
+  .input button{
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    width: 50px;
+  }
+  .forfrom{
+    
+    width: 22%;
+  }
+  .form-controler{
+    padding: 5px;
+    width: 100%;
+    border: 2px rgb(218, 218, 218) solid;
+  }
+  .bg-trans{
+    background-color: transparent;
+    border: none;
+  }
+  .d-full{
+    height: 100vh;
+  }
+
+  .sidebar{
+    height: 100vh;
+    position: absolute;
+    z-index: 4;
+    background-color: rgba(255, 255, 255, 0.559);
+    width: 98.89vw;
+  }
+  .inner-sidebar{
+    padding: 0 20px 0 20px;
+    height: 100vh;
+    width: 23%;
+    background-color: white;
+
   }
