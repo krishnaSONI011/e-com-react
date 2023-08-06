@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import { useAuth } from './context/authContext'
 let Sidebar = props => {
+  let [auth] =useAuth();
   let links = [
     { name: "SHOP", link: "/shop" },
     { name: "IN THE SPOTLIGHT", link: "/spotlight" },
@@ -23,6 +25,7 @@ let Sidebar = props => {
           <div className="inner-element">
             <div className="icon-bar d-flex justify-content-between align-items-center border-bottom pb-3">
               <div className="icon-text d-flex justify-content-around w-50  align-items-center">
+              
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -46,7 +49,7 @@ let Sidebar = props => {
                     stroke-linejoin="round"
                   ></path>
                 </svg>
-                <span className="font-1 fs-4 ">Login</span>
+                <span className="font-1 fs-4 ">{auth.user ==null ? "Login" : auth.user.name}</span>
               </div>
               <span className="mouse-pointer"  onClick={handleSide} >
                 <i class="fa-solid fa-x fs-5"></i>

@@ -8,14 +8,24 @@ let AuthProvider = ({ children }) => {
         user: null,
         token: ""
     })
+    useEffect(()=>{
+    let data =localStorage.getItem("auth")
+
+    if(data){
+        let parsedData = JSON.parse(data)
+        setAuth({
+            ...auth,
+            user:parsedData.user,
+            token:parsedData.token
+        })
+    }
+    },[])
     return (
 
-        <
-        AuthContex.Provider value = {
-            [auth, setAuth] } >
+        <AuthContex.Provider value = {[auth, setAuth] } >
 
-        { children } <
-        /AuthContex.Provider >
+        { children } 
+        </AuthContex.Provider>
 
 
     )
