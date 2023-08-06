@@ -1,5 +1,10 @@
 @import url(https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century);
 @import url(https://db.onlinewebfonts.com/c/cdf72388115e4baec39bfc220cc786af?family=Futura-Lig);
+:root {
+    --shine-degree: 120deg;
+    --shine-color: rgba(255, 255, 255, 0.2);
+}
+
 nav {
     padding: 30px 0 30px 0;
 }
@@ -10,6 +15,10 @@ nav {
 
 .font-2 {
     font-family: "Futura-Lig";
+}
+
+.new {
+    font-size: 17px;
 }
 
 .topbar {
@@ -68,4 +77,118 @@ nav {
 
 p {
     margin: 0 !important;
+}
+
+.size-box {
+    border: 2px solid #d8d8d8;
+}
+
+.mouse-pointer {
+    cursor: pointer;
+}
+
+.border-bottom {
+    border-bottom: 2px solid rgb(203, 203, 203);
+}
+
+.border-top {
+    border-top: 2px solid rgb(203, 203, 203);
+}
+
+.border-right {
+    border-right: 1px solid rgb(203, 203, 203);
+}
+
+.shine-button {
+    letter-spacing: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-button::after {
+    content: " ";
+    height: 100px;
+    top: 0;
+    transform: skewX(10deg);
+    background: linear-gradient(123deg, #fdfdfd, transparent);
+    filter: blur(30px);
+    position: absolute;
+    width: 60px;
+    opacity: 0.7;
+    right: -100px;
+}
+
+.shine-button:hover::after {
+    animation: shine-hover 1s;
+}
+
+@keyframes shine-hover {
+    0% {
+        right: -100px;
+    }
+    100% {
+        right: 500px;
+    }
+}
+
+.space {
+    letter-spacing: 5px;
+}
+
+.all-cat-img {
+    transition: transform 0.3s ease;
+}
+
+.all-cat-eff:hover .all-cat-img {
+    transform: scale(1.01);
+}
+
+.input input {
+    border: none;
+    border-bottom: 2px black solid;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+}
+
+.input button {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    width: 50px;
+}
+
+.forfrom {
+    width: 22%;
+}
+
+.form-controler {
+    padding: 5px;
+    width: 100%;
+    border: 2px rgb(218, 218, 218) solid;
+}
+
+.bg-trans {
+    background-color: transparent;
+    border: none;
+}
+
+.d-full {
+    height: 100vh;
+}
+
+.sidebar {
+    height: 100vh;
+    position: absolute;
+    z-index: 4;
+    background-color: rgba(255, 255, 255, 0.559);
+    width: 98.89vw;
+}
+
+.inner-sidebar {
+    padding: 0 20px 0 20px;
+    height: 100vh;
+    width: 23%;
+    background-color: white;
 }
