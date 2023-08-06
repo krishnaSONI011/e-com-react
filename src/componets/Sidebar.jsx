@@ -11,6 +11,9 @@ let Sidebar = props => {
     { name: "STORE LOCATER", link: "/store" },
     { name: "RELOVE", link: "/relove" },
   ];
+  function handleSide(){
+    props.setOpen(-200)
+  }
   return (
     <>
       <div className="sidebar " style={{
@@ -45,7 +48,7 @@ let Sidebar = props => {
                 </svg>
                 <span className="font-1 fs-4 ">Login</span>
               </div>
-              <span className="mouse-pointer"   >
+              <span className="mouse-pointer"  onClick={handleSide} >
                 <i class="fa-solid fa-x fs-5"></i>
               </span>
             </div>
