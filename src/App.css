@@ -175,8 +175,10 @@ p {
     z-index: 4;
     background-color: rgba(255, 255, 255, 0.559);
     width: 98.89vw;
+    transition: all 1s ease;
   }
   .inner-sidebar{
+    /* transition: all .5s ease; */
     padding: 0 20px 0 20px;
     height: 100vh;
     width: 23%;
