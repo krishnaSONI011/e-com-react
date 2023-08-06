@@ -184,6 +184,7 @@ p {
     z-index: 4;
     background-color: rgba(255, 255, 255, 0.559);
     width: 98.89vw;
+    transition: all 1s;
 }
 
 .inner-sidebar {
