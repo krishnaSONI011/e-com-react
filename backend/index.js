@@ -24,5 +24,5 @@ app.listen(port, () => {
     console.log(`your server running at ${port}`)
 })
 app.get('/', (req, res) => {
-    res.send("Hell")
+    res.send("welcome to dark side look like something went worg")
 })
