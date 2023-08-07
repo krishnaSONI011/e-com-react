@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
-
+import { useAuth } from './context/authContext'
 export default function Navbar() {
   let [open,setOpen] = useState(-200)
-
+  let [auth,setAuth]=useAuth()
   function sideOpener(){
        setOpen(0)
   }
@@ -25,7 +25,7 @@ export default function Navbar() {
       </div>
       <div className="w-9">
       <div className="d-flex justify-content-evenly icon-sizer-1">
-     <Link to="auth/login" className='text-dark'> <i className="fa-regular fa-user"></i></Link>
+     <Link to={auth.user == null?"auth/login" : "/account"} className='text-dark'> <i className="fa-regular fa-user"></i></Link>
       <i className="fa-solid fa-magnifying-glass"></i>
       <i className="fa-regular fa-heart"></i>
       <i className="fa-solid fa-camera"></i>

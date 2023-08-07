@@ -1,13 +1,22 @@
-import React,{useState} from 'react'
+import React,{useState,} from 'react';
+import { useAuth } from './context/authContext';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 export default function Login() {
+  let navigate = useNavigate();
+  let [auth,setAuth]=useAuth()
   let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
   let sendData = async () => {
     try {
-      let data = await axios.post("http://localhost:8080/api/auth/login", { email, password });
-      let {user} = data.data 
-      let {token} =data.data
+      let res = await axios.post("http://localhost:8080/api/auth/login", { email, password });
+      setAuth({...auth,
+        user:res.data.user,
+        token:res.data.token
+      })
+      console.log("hmm ")
+      localStorage.setItem('auth',JSON.stringify(res.data))
+      navigate("/")
     } catch (e) {
       console.log(e)
     }
