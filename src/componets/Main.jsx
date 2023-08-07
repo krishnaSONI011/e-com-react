@@ -5,7 +5,6 @@ import New_dorps from './New_drops'
 import Most_trending from './Most_trending'
 import All_category from './All_category'
 import End_sec from './End_sec'
-
 export default function Main() {
   return (
     <>
@@ -15,6 +14,7 @@ export default function Main() {
       <Most_trending/>
       <All_category/>
       <End_sec/>
+      
     </>
   )
 }

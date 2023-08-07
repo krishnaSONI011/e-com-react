@@ -193,3 +193,40 @@ p {
     width: 23%;
     background-color: white;
 }
+.inner-acc{
+    box-shadow: 2px 2px 5px rgb(153,153,153);
+    border-radius: 20px;
+    height: 400px;
+}
+.box{
+    padding: 15px 20px;
+    background-color: rgb(153,153,153);
+    border-radius: 100px;
+}
+.info{
+    box-shadow: 2px 2px 5px rgb(153,153,153);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.b-hover{
+    border-left: 0px solid rgb(153,153,153);
+    transition: border .2s linear;
+}
+.b-hover:hover {
+    border-left:8px solid rgb(153,153,153);
+}
+.b-hover:hover .text{
+    font-weight: 400 !important;
+}
+.item{
+    position: relative;
+}
+.position{
+    position: absolute;
+}
+.bg-gray{
+    background-color: rgb(153,153,153);
+}
+.border-radius{
+    border-radius: 15px;
+}
