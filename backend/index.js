@@ -15,7 +15,8 @@ db()
 app.use(express.json())
 let port = process.env.PORT || 8080;
 
-app.use('/api/auth/', UserAuth)
+app.use('/api/auth/', UserAuth);
+
 
 app.listen(port, () => {
     console.log(`your server running at ${port}`)
