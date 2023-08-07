@@ -58,7 +58,7 @@ Router.post("/get-products/new-drops", async (req, res) => {
         let products = await productModel.find({}).limit(4).exec();
         return res.status(200).json({
             success:true,
-            product:{products}
+            products
         })
     } catch (err) {
         console.error(err)
