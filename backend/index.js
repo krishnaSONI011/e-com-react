@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import db from './config/db.js'
 import UserAuth from './routes/UserAuth.js';
+import CategoryRouter from './routes/CategoryRouter.js'
 import cors from 'cors'
 // config dot env file 
 
@@ -15,11 +16,13 @@ db()
 app.use(express.json())
 let port = process.env.PORT || 8080;
 
-app.use('/api/auth/', UserAuth)
+app.use('/api/auth/', UserAuth);
+app.use('/api/category/', CategoryRouter); 
+
 
 app.listen(port, () => {
     console.log(`your server running at ${port}`)
 })
 app.get('/', (req, res) => {
-    res.send("Hell")
+    res.send("welcome to dark side look like something went worg")
 })

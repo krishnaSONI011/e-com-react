@@ -1,11 +1,11 @@
 import React from "react";
-import Acc_navComp from "./Acc_navComp";
+import Accnavcomp from "./Acc_navComp";
 
 let Account = () =>{
     return(
         <>
         <div className="container">
-        <Acc_navComp/>
+        <Accnavcomp/>
 
         </div>
         </>
