@@ -53,4 +53,12 @@ Router.post("/create-product", upload.single('image'), async (req, res) => {
     }
 })
 
+Router.post("/get-products", async (req, res) => {
+    try {
+        
+    } catch (err) {
+        console.error(err)
+    }
+})
+
 export default Router;
