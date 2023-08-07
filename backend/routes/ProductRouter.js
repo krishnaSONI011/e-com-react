@@ -53,9 +53,13 @@ Router.post("/create-product", upload.single('image'), async (req, res) => {
     }
 })
 
-Router.post("/get-products", async (req, res) => {
+Router.post("/get-products/new-drops", async (req, res) => {
     try {
-        
+        let products = await productModel.find({}).limit(4).exec();
+        return res.status(200).json({
+            success:true,
+            product:{products}
+        })
     } catch (err) {
         console.error(err)
     }
