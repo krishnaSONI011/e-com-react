@@ -9,7 +9,9 @@ let upload = multer({dest:'uploads/'})
 Router.post('/category-create',upload.single('image'),async (req,res)=>{
 try{
 let [name,image,slug] = req.body
-
+if(!name || !image || !slug){
+    return  res.status(400).json({error:""})
+}
 
 }catch(err){
 
