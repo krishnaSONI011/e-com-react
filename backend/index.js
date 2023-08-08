@@ -5,7 +5,7 @@ import UserAuth from './routes/UserAuth.js';
 import CategoryRouter from './routes/CategoryRouter.js'
 import ProductRouter from './routes/ProductRouter.js'
 import cors from 'cors'
-import path from 'path'
+
 // config dot env file 
 
 dotenv.config()

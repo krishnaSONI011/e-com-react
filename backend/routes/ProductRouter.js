@@ -23,6 +23,7 @@ let upload = multer({ storage: storage })
 Router.post("/create-product", upload.single('image'), async (req, res) => {
     try {
         let { name, price, category } = req.body
+        // eslint-disable-next-line default-case
         switch (true) {
             case !name:
                 return res.status(400).json({ err: "Name is required" });
@@ -30,6 +31,7 @@ Router.post("/create-product", upload.single('image'), async (req, res) => {
                 return res.status(400).json({ err: "Price is required" });
             case !category:
                 return res.status(400).json({ err: "Category is required" });
+                
         }
         let slug = toSlug(name);
         let category_model = await categoryModel.findOne({ name: category });

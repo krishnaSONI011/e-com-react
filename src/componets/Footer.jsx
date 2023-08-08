@@ -3,7 +3,7 @@ import React,{useState} from 'react'
 export default function Footer() {
     let [newsBtn,setNewsBtn] = useState(0)
     let change = (e)=>{
-        if(e.target.value == "" ){
+        if(e.target.value === "" ){
             setNewsBtn(0)
         }
         else{
@@ -52,7 +52,7 @@ export default function Footer() {
       <p className='space pb-2'>SIGN UP AND SAVE</p>
       <p className='pb-2'>Sign up now and be the first to know about exclusive offers, latest fashion trends & style tips!</p>
       <div className="input">
-        <input type="text" placeholder='Enter your email' onChange={change}/><button className='newslatter-btn '>{newsBtn == 0 ?<i class="fa-regular fa-envelope"></i>:"Subscribe"}</button>
+        <input type="text" placeholder='Enter your email' onChange={change}/><button className='newslatter-btn '>{newsBtn === 0 ?<i class="fa-regular fa-envelope"></i>:"Subscribe"}</button>
       </div>
       <div className="icon mt-3">
         <span className='fs-3 px-2'><i class="fa-brands fa-instagram"></i></span>
