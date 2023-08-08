@@ -5,13 +5,15 @@ import UserAuth from './routes/UserAuth.js';
 import CategoryRouter from './routes/CategoryRouter.js'
 import ProductRouter from './routes/ProductRouter.js'
 import cors from 'cors'
+import path from 'path'
 // config dot env file 
 
 dotenv.config()
     // middleware 
-let app = express()
-app.use(cors())
-app.use(express.json());
+    let app = express()
+    app.use(cors())
+    app.use(express.json());
+    app.use('/uploads', express.static('uploads'));
 //database 
 db()
 app.use(express.json())

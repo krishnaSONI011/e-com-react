@@ -6,7 +6,6 @@ import categoryModel from '../model/categoryModel.js';
 import productModel from '../model/productModel.js';
 
 let Router = express.Router()
-
 // for image to store here 
 let storage = multer.diskStorage({
     destination: function (req, res, cb) {
@@ -17,6 +16,7 @@ let storage = multer.diskStorage({
         cb(null, uniqueName)
     }
 })
+
 
 let upload = multer({ storage: storage })
 
