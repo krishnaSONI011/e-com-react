@@ -47,4 +47,17 @@ Router.post('/create-category', upload.single('image'), async (req, res) => {
     }
 });
 
+Router.post("/show-category" , async (req,res)=>{
+    try{
+        let category = await categoryModel.find({})
+        return res.status(200).json({
+            success:true,
+            category
+        })
+    }
+    catch(err){
+        console.error(err)
+    }
+})
+
 export default Router;
