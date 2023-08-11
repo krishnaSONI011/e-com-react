@@ -26,10 +26,12 @@ export default function Navbar() {
       <div className="w-9">
       <div className="d-flex justify-content-evenly icon-sizer-1">
      <Link to={auth.user == null?"auth/login" : "/account"} className='text-dark'> <i className="fa-regular fa-user"></i></Link>
-      <i className="fa-solid fa-magnifying-glass"></i>
-      <i className="fa-regular fa-heart"></i>
-      <i className="fa-solid fa-camera"></i>
-      <i className="fa-solid fa-cart-shopping"></i>
+            <i className="bi bi-search"></i>
+
+            <i className="bi bi-heart"></i>
+
+      <i className="bi bi-camera"></i>
+      <i className="bi bi-bag"></i>
       </div>
       </div>
       </div>
