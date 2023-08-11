@@ -185,7 +185,7 @@ p {
     position: absolute;
     z-index: 4;
     background-color: rgba(255, 255, 255, 0.559);
-    width: 98.89vw;
+    width: 100vw;
     transition: all 1s;
 }
 
@@ -257,4 +257,7 @@ background-color: rgb(222, 222, 222);
 }
 .accord-title i{
     transition: all .5s ease;
+}
+.for-product{
+    height: 500px;
 }

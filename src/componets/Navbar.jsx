@@ -2,15 +2,20 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import { useAuth } from './context/authContext'
+import Cart from './cart/Cart'
+
+
 export default function Navbar() {
-  let [open,setOpen] = useState(-200)
+  let [open, setOpen] = useState(-200)
+  let [cart,setCart] = useState(200)
   let [auth]=useAuth()
   function sideOpener(){
        setOpen(0)
   }
   return (
     <>
-    <Sidebar mode={open} setOpen={setOpen} />
+      <Sidebar mode={open} setOpen={setOpen} />
+      {/* <Cart mode={ cart} setCart={setCart} /> */}
     <div className='topbar font-1 text-center'>
       <span>SHOP FOR RS 3999/- & Get FLAT 15% OFF</span>
       <span>USE CODE: SHOP15</span>
@@ -35,7 +40,8 @@ export default function Navbar() {
       </div>
       </div>
       </div>
-  </nav>
+      </nav>
+      
     </>
   )
 }
