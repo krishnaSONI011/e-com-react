@@ -4,7 +4,7 @@ import Sidebar from './Sidebar'
 import { useAuth } from './context/authContext'
 export default function Navbar() {
   let [open,setOpen] = useState(-200)
-  let [auth,setAuth]=useAuth()
+  let [auth]=useAuth()
   function sideOpener(){
        setOpen(0)
   }
