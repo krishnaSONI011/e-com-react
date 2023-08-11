@@ -52,7 +52,7 @@ let Sidebar = props => {
                 <span className="font-1 fs-4 ">{auth.user ==null ? "Login" : auth.user.name}</span>
               </div>
               <span className="mouse-pointer"  onClick={handleSide} >
-                <i class="fa-solid fa-x fs-5"></i>
+                <i className="fa-solid fa-x fs-5"></i>
               </span>
             </div>
             {
@@ -65,24 +65,24 @@ let Sidebar = props => {
             <div className="social-icon border-top mt-2 text-center">
             <div className="row">
               <div className="col-4 border-right text-center border-bottom">
-              <i class="fa-brands fa-facebook fs-3 p-3"></i>
+              <i className="fa-brands fa-facebook fs-3 p-3"></i>
               </div>
               <div className="col-4 border-right text-center border-bottom">
-              <i class="fa-brands fa-youtube fs-3 p-3"></i>
+              <i className="fa-brands fa-youtube fs-3 p-3"></i>
               </div>
               <div className="col-4 border-right text-center border-bottom ">
-              <i class="fa-brands fa-instagram fs-3 p-3"></i>
+              <i className="fa-brands fa-instagram fs-3 p-3"></i>
               </div>
             </div>
             <div className="row">
               <div className="col-4 border-right text-center border-bottom">
-              <i class="fa-brands fa-twitter fs-3 p-3"></i>
+              <i className="fa-brands fa-twitter fs-3 p-3"></i>
               </div>
               <div className="col-4 border-right text-center border-bottom">
-              <i class="fa-brands fa-pinterest fs-3 p-3"></i>
+              <i className="fa-brands fa-pinterest fs-3 p-3"></i>
               </div>
               <div className="col-4 border-right text-center border-bottom ">
-              <i class="fa-brands fa-linkedin fs-3 p-3"></i>
+              <i className="fa-brands fa-linkedin fs-3 p-3"></i>
               </div>
             </div>
             </div>

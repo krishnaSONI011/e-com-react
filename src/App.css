@@ -158,7 +158,9 @@ p {
     background-color: transparent;
     width: 50px;
 }
-
+.bg-trans{
+    
+}
 .forfrom {
     width: 22%;
 }
@@ -229,4 +231,30 @@ p {
 }
 .border-radius{
     border-radius: 15px;
+}
+.product-h{
+    font-weight: 400  !important;
+}
+.q-input input{
+    border:none;
+    outline: none;
+    
+    width: 30%;
+    text-align: center;
+}
+.q-box{
+    width:27.10% ;
+}
+.q-point:hover{
+background-color: rgb(222, 222, 222);
+}
+.q-point{
+    padding: 5px 20px;
+    
+}
+.accord{
+    transition: all .5s ease;
+}
+.accord-title i{
+    transition: all .5s ease;
 }

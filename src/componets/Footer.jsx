@@ -52,15 +52,15 @@ export default function Footer() {
       <p className='space pb-2'>SIGN UP AND SAVE</p>
       <p className='pb-2'>Sign up now and be the first to know about exclusive offers, latest fashion trends & style tips!</p>
       <div className="input">
-        <input type="text" placeholder='Enter your email' onChange={change}/><button className='newslatter-btn '>{newsBtn === 0 ?<i class="fa-regular fa-envelope"></i>:"Subscribe"}</button>
+        <input type="text" placeholder='Enter your email' onChange={change}/><button className='newslatter-btn '>{newsBtn === 0 ?<i className="fa-regular fa-envelope"></i>:"Subscribe"}</button>
       </div>
       <div className="icon mt-3">
-        <span className='fs-3 px-2'><i class="fa-brands fa-instagram"></i></span>
-        <span className='fs-3 px-2'><i class="fa-brands fa-facebook"></i></span>
-        <span className='fs-3 px-2'><i class="fa-brands fa-youtube"></i></span>
-        <span className='fs-3 px-2'><i class="fa-brands fa-twitter"></i></span>
-        <span className='fs-3 px-2'><i class="fa-brands fa-pinterest"></i></span>
-        <span className='fs-3 px-2'><i class="fa-brands fa-linkedin"></i></span>
+        <span className='fs-3 px-2'><i className="fa-brands fa-instagram"></i></span>
+        <span className='fs-3 px-2'><i className="fa-brands fa-facebook"></i></span>
+        <span className='fs-3 px-2'><i className="fa-brands fa-youtube"></i></span>
+        <span className='fs-3 px-2'><i className="fa-brands fa-twitter"></i></span>
+        <span className='fs-3 px-2'><i className="fa-brands fa-pinterest"></i></span>
+        <span className='fs-3 px-2'><i className="fa-brands fa-linkedin"></i></span>
       </div>
       </div>
      <div className="copy text-center my-4 " style={{fontSize:"12px"}}>
