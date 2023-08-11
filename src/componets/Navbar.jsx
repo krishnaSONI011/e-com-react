@@ -21,7 +21,7 @@ export default function Navbar() {
                   <button className="ham-style" onClick={()=>sideOpener(-200)}><i className="fa-solid fa-bars"></i></button>
       </div>
       <div className="site-logo">
-        <Link to="/"><img src="https://www.snitch.co.in/cdn/shop/files/blackoption_200x.png?v=1659016547" className="img-fluid rounded-top" alt=""/></Link>
+        <Link to="/" className='text-decoration-none'><span className='text-decoration-none text-dark fs-2'>E-COM</span></Link>
       </div>
       <div className="w-9">
       <div className="d-flex justify-content-evenly icon-sizer-1">

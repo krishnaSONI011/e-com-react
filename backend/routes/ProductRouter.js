@@ -67,4 +67,21 @@ Router.post("/get-products/new-drops", async (req, res) => {
     }
 })
 
+Router.get('/:slug', async (req,res)=>{
+    try{
+        let product = await productModel.findOne({ slug:req.params.slug})
+        return res.status(200).json({
+            success:true,
+            product
+        })
+    }
+    catch(err){
+        console.log(err)
+        return res.status(400).json({
+            success:true,
+            message:"Product Not Found"
+        })
+        
+    }
+})
 export default Router;

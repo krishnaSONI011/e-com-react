@@ -1,8 +1,9 @@
 import React, { useEffect ,useState} from "react";
 import axios from "axios";
-
+import {Link} from "react-router-dom"
 let New_dorps = () => {
   let [data,setData] = useState([])
+  let key = 0;
   useEffect(() => {
     let fetch = async () => {
       try {
@@ -28,7 +29,9 @@ let New_dorps = () => {
         <div className="new_drop mx-5">
           <div className="row">
             {data.map((d) => (
-              <div className="col-md-3 mouse-pointer" key={d._id}>
+              <div className="col-md-3 mouse-pointer" key={key+1}>
+                <Link to={`products/${d.slug}` } className="text-decoration-none text-dark">
+
                 <img
                   src={`http://localhost:8080/${d.image}`}
                   alt=""
@@ -47,6 +50,7 @@ let New_dorps = () => {
                     <div className="size-box p-2 px-3 fs-6 mx-2">L</div>
                   </div>
                 </div>
+              </Link>
               </div>
             ))}
           </div>
