@@ -2,22 +2,30 @@ import React from "react";
 import CartProduct from "./CartProduct";
 
 let Cart = (props) => {
-    
+    function close(){
+        
+
+            props.setCart(-500)
+        
+    }
     return (
         <>
-            <div className="sidebar" style={{
-            right:props.mode
+            <div className="sidebar overflow-hidden" style={{
+            right:0,
+            display:props.mode === -500 ? "none" : "block",
+            height:"100%"
             }}>
-                <div className="inner-sidebar position-absolute " style={{
-                    right: 0,
-                    width:"30%"
+                <div className="inner-sidebar position-absolute" style={{
+                    right:props.mode+"%",
+                    width:"30%",
+                    height:"100%"
                 }}>
                     <div className="cart">
                         <div className="cart-title d-flex justify-content-between p-2 py-3 border-bottom">
                             <h3 className="font-1 fs-2">CART</h3>
-                            <i className="bi bi-x fs-4"></i>
+                            <i className="bi bi-x fs-4 mouse-pointer" onClick={close}></i>
                         </div>
-                        <div className="for-product overflow-scroll border-bottom pt-3">
+                        <div className="for-product  border-bottom pt-3">
                                 <CartProduct/>
                         </div>
                         <div className="subtotle d-flex justify-content-between py-3">

@@ -12,8 +12,8 @@ let CartProduct = () => {
                     <div className="d-flex align-items-center justify-content-between py-4 ">
                     <div className="quantity ">
             
-                            <div className="q-box border " style={{
-                    width:"45%"
+                            <div className="q-box border d-flex align-items-center justify-content-between " style={{
+                    width:"57%"
                 }}>
                     <span
                         className="fs-4    mouse-pointer q-point"
@@ -26,7 +26,7 @@ let CartProduct = () => {
                     >
                         +
                     </span>
-                    <span className="q-input">
+                    <span className="q-input text-center">
                         <input
                             type="text"
                             value={quantity}
@@ -35,6 +35,9 @@ let CartProduct = () => {
                     </span>
                     <span
                         className="fs-4   mouse-pointer q-point"
+                        style={{
+                            padding:"5px 10px"
+                        }}
                         onClick={(e) => {
                             setQuantity(quantity - 1)
                         }}

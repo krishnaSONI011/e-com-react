@@ -7,15 +7,18 @@ import Cart from './cart/Cart'
 
 export default function Navbar() {
   let [open, setOpen] = useState(-200)
-  let [cart,setCart] = useState(200)
+  let [cart,setCart] = useState(-500)
   let [auth]=useAuth()
   function sideOpener(){
        setOpen(0)
   }
+  function openCart(){
+    setCart(0)
+  }
   return (
     <>
       <Sidebar mode={open} setOpen={setOpen} />
-      {/* <Cart mode={ cart} setCart={setCart} /> */}
+      <Cart mode={ cart} setCart={setCart} />
     <div className='topbar font-1 text-center'>
       <span>SHOP FOR RS 3999/- & Get FLAT 15% OFF</span>
       <span>USE CODE: SHOP15</span>
@@ -36,7 +39,9 @@ export default function Navbar() {
             <i className="bi bi-heart"></i>
 
       <i className="bi bi-camera"></i>
-      <i className="bi bi-bag"></i>
+      <i className="bi bi-bag mouse-pointer " onClick={openCart}></i><span className='point' style={{
+        display:"none"
+      }}></span>
       </div>
       </div>
       </div>
