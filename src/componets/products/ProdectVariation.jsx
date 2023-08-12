@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-let ProductVariation = () => {
-    let [quantity, setQuantity] = useState(1);
-
+let ProductVariation = (props) => {
+    
+    
     
 
     return (
@@ -10,17 +10,17 @@ let ProductVariation = () => {
             <div className="mt-2 mb-3">
                 <p className="font-1 space">SIZE</p>
             </div>
-            <span className="p-2 border px-3 mouse-pointer me-2">S</span>
-            <span className="p-2 border px-3 mouse-pointer me-2">M</span>
-            <span className="p-2 border px-3 mouse-pointer me-2">L</span>
-            <span className="p-2 border px-3 mouse-pointer me-2">XL</span>
+            <span className="p-2 border px-3 mouse-pointer me-2" onClick={(e)=>props.setSize("S")}>S</span>
+            <span className="p-2 border px-3 mouse-pointer me-2" onClick={(e)=>props.setSize("M")}>M</span>
+            <span className="p-2 border px-3 mouse-pointer me-2" onClick={(e)=>props.setSize("L")}>L</span>
+            <span className="p-2 border px-3 mouse-pointer me-2" onClick={(e)=>props.setSize("XL")}>XL</span>
             <div className="quantity mt-5">
                 <p className="font-1 space">QUANTITY</p>
                 <div className="q-box border my-2">
                     <span
                         className="fs-4    mouse-pointer q-point"
                         onClick={() => {
-                            setQuantity(quantity + 1);
+                            props.setQuantity(props.quantity + 1);
                         }}
                     >
                         +
@@ -28,14 +28,14 @@ let ProductVariation = () => {
                     <span className="q-input">
                         <input
                             type="text"
-                            value={quantity}
+                            value={props.quantity}
                              
                         />
                     </span>
                     <span
                         className="fs-4   mouse-pointer q-point"
                         onClick={(e) => {
-                            setQuantity(quantity - 1)
+                            props.setQuantity(props.uantity - 1)
                         }}
                     >
                         -

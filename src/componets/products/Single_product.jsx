@@ -10,6 +10,8 @@ import { useEffect,useState } from "react";
 let Single_product = ()=>{
     let [data,setData]= useState([])
     let {slug} = useParams();
+    let [size,setSize]= useState("S");
+    let [quantity, setQuantity] = useState(1);
     useEffect(()=>{
         async function fetch(){
            
@@ -31,14 +33,14 @@ let Single_product = ()=>{
                 </div>
            
             <div className="variastion ">
-               <ProductVariation/>
+               <ProductVariation size={size} setSize={setSize} quantity={quantity} setQuantity={setQuantity}/>
                </div>
                <div className="product-accord w-100">
                 <ProductAccord/>
                 
                </div>
                <div className="addtocartmeta">
-                <ProductAddtocart/>
+                <ProductAddtocart productId={data._id} size={size} quantity={quantity}/>
                </div>
             </div>
             

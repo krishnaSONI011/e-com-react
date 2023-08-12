@@ -4,6 +4,7 @@ import db from './config/db.js'
 import UserAuth from './routes/UserAuth.js';
 import CategoryRouter from './routes/CategoryRouter.js'
 import ProductRouter from './routes/ProductRouter.js'
+import CartRouter from './routes/CartRouter.js'
 import cors from 'cors'
 
 // config dot env file 
@@ -22,7 +23,7 @@ let port = process.env.PORT || 8080;
 app.use('/api/auth/', UserAuth);
 app.use('/api/category/', CategoryRouter); 
 app.use('/api/product/',ProductRouter)
-
+app.use('/api/cart/',CartRouter)
 
 app.listen(port, () => {
     console.log(`your server running at ${port}`)
