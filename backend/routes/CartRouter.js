@@ -32,4 +32,30 @@ Router.post('/add-cart', async (req,res)=>{
         })
     }
 })
+Router.post('/get-item', async (req, res) => {
+    try {
+        let { user } = req.body;
+        let data = await cartModel.find({ user });
+        if (data) {
+            return res.status(200).json({
+                success: true,
+                data
+            })
+          
+        }
+        else {
+            return res.status(200).json({
+                success: true,
+                message:"Sorry nothing in the cart"
+            })
+        }
+    } catch (err) {
+        console.log(err)
+        return res.status(400).json({
+            success: false,
+            message: "error in the cart",
+            err
+        })
+    }
+})
 export default Router;
