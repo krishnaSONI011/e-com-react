@@ -58,4 +58,20 @@ Router.post('/get-item', async (req, res) => {
         })
     }
 })
+Router.post('/delete-item', async (req, res) => {
+    try {
+        let { id } = req.body;
+        await cartModel.findByIdAndDelete(id);
+        return res.status(200).json({
+            success: true,
+            message:"item deleted "
+        })
+    } catch (err) {
+        console.log("error")
+        return res.status(400).json({
+            success: false,
+            message:"somthing went wrong"
+        })
+    }
+})
 export default Router;
