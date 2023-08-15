@@ -43,6 +43,7 @@ let Cart = (props) => {
                                     cart={cart}
                                     setTotal={setTotal}
                                     total={total}
+                                     fetchCartItems={props.cartItem}
                                 />
                             ))}
                         </div>

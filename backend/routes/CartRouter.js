@@ -58,7 +58,7 @@ Router.post('/get-item', async (req, res) => {
         })
     }
 })
-Router.post('/delete-item', async (req, res) => {
+Router.delete('/delete-item', async (req, res) => {
     try {
         let { id } = req.body;
         await cartModel.findByIdAndDelete(id);

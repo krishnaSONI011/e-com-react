@@ -47,7 +47,9 @@ export default function Navbar() {
   return (
     <>
       <Sidebar mode={open} setOpen={setOpen} />
-      <Cart mode={ cart} setCart={setCart} item={item}/>
+      {/* <Cart mode={cart} setCart={setCart} item={item} cartItem={openCart} /> */}
+      <Cart mode={cart} setCart={setCart} item={item} cartItem={openCart} fetchCartItems={openCart} />
+
     <div className='topbar font-1 text-center'>
       <span>SHOP FOR RS 3999/- & Get FLAT 15% OFF</span>
       <span>USE CODE: SHOP15</span>
