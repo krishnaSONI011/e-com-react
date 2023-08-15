@@ -1,14 +1,21 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 
-let CartProduct = () => {
-    let [quantity, setQuantity] = useState(1);
+let CartProduct = (props) => {
+    let [quantity, setQuantity] = useState(props.cart.qty);
+    
+    useEffect(() => {
+        // Calculate total price based on quantity and unit price
+        const unitPrice = parseInt(props.cart.product.price);
+        const newTotal = unitPrice * quantity;
+        props.setTotal(newTotal);
+    }, [quantity, props.cart.product.price]);
     return (
         <>
-            <div className="cart-product d-flex justify-content-between">
-                <img src="https://www.snitch.co.in/cdn/shop/files/Snitch_sep21_0610_2332a499-efa6-45e8-b974-4034649daf2c_360x.jpg?v=1690380204" alt="" style={{ width: "30%" }} />
+            <div className="cart-product d-flex justify-content-between my-3">
+                <img src={`http://localhost:8080/${props.cart.product.image}`} alt="" style={{ width: "30%" }} />
                 <div className="cart-title ms-3">
-                    <p>HIP HOP BLUE BAGGY CARGO JEANS</p>
-                    <span><b>Size:</b>32</span>
+                    <p>{props.cart.product.name}</p>
+                    <span><b>Size:</b> {props.cart.size}</span>
                     <div className="d-flex align-items-center justify-content-between py-4 ">
                     <div className="quantity ">
             
@@ -46,7 +53,7 @@ let CartProduct = () => {
                     </span>
                 </div>
                         </div>
-                        <span style={{width:"34%"}}>Rs 1200</span>
+                        <span style={{width:"34%"}}>Rs {props.cart.product.price}</span>
                         </div>
                 </div>
                 

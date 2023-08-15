@@ -7,6 +7,7 @@ export default function Login() {
   let [auth,setAuth]=useAuth()
   let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
+ 
   let sendData = async () => {
     try {
       let res = await axios.post("http://localhost:8080/api/auth/login", { email, password });
@@ -14,8 +15,9 @@ export default function Login() {
         user:res.data.user,
         token:res.data.token
       })
-      console.log("hmm ")
+      
       localStorage.setItem('auth',JSON.stringify(res.data))
+      
       navigate("/")
     } catch (e) {
       console.log(e)

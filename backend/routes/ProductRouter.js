@@ -84,4 +84,24 @@ Router.get('/:slug', async (req,res)=>{
         
     }
 })
+// Route for single product;
+
+Router.post("/single-product", async (req,res)=>{
+    try{
+        let {id} = req.body
+        let product = await productModel.findById(id)
+        return res.status(200).json({
+            success:true,
+            product
+        })
+    }
+    catch(err){
+        console.log(err)
+        return res.status(400).json({
+            success:true,
+            message:"Product Not Found"
+        })
+        
+    }
+})
 export default Router;

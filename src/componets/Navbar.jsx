@@ -2,23 +2,52 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import { useAuth } from './context/authContext'
-import Cart from './cart/Cart'
+import Cart from './cart/Cart';
+import axios from 'axios'
 
 
 export default function Navbar() {
   let [open, setOpen] = useState(-200)
-  let [cart,setCart] = useState(-500)
+  let [cart,setCart] = useState(-500);
+  let [item, setItem] = useState([]);
   let [auth]=useAuth()
   function sideOpener(){
        setOpen(0)
   }
-  function openCart(){
-    setCart(0)
-  }
+  async function openCart() {
+    setCart(0);
+
+    try {
+        let user = auth.user.id;
+
+        let cartItemsResponse = await axios.post("http://localhost:8080/api/cart/get-item", { user });
+
+        const cartItemsData = cartItemsResponse.data.data; // Access the 'data' property
+
+        if (Array.isArray(cartItemsData)) {
+            const cartWithProducts = await Promise.all(
+                cartItemsData.map(async (cartItem) => {
+                    const productResponse = await axios.post("http://localhost:8080/api/product/single-product", { id: cartItem.product });
+                    const product = productResponse.data.product;
+
+                    return { ...cartItem, product };
+                })
+            );
+
+            setItem(cartWithProducts);
+        } else {
+            console.error("API response does not contain an array of cart items:", cartItemsData);
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
   return (
     <>
       <Sidebar mode={open} setOpen={setOpen} />
-      <Cart mode={ cart} setCart={setCart} />
+      <Cart mode={ cart} setCart={setCart} item={item}/>
     <div className='topbar font-1 text-center'>
       <span>SHOP FOR RS 3999/- & Get FLAT 15% OFF</span>
       <span>USE CODE: SHOP15</span>

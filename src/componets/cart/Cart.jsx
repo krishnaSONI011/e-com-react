@@ -1,13 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
+
 import CartProduct from "./CartProduct";
 
+
 let Cart = (props) => {
+    let [total,setTotal] = useState(0)
     function close(){
         
 
             props.setCart(-500)
         
     }
+  
     return (
         <>
             <div className="sidebar overflow-hidden" style={{
@@ -26,11 +30,15 @@ let Cart = (props) => {
                             <i className="bi bi-x fs-4 mouse-pointer" onClick={close}></i>
                         </div>
                         <div className="for-product  border-bottom pt-3">
-                                <CartProduct/>
+                        {
+                                props.item.map((cart, index) => (
+                                    <CartProduct key={index} cart={cart} setTotal={setTotal}/>
+                                ))
+                            }
                         </div>
                         <div className="subtotle d-flex justify-content-between py-3">
                             <h6 className="font-2 space py-2">SUBTOTAL</h6>
-                            <h6 className="font-1 ">Rs 1200</h6>
+                            <h6 className="font-1 ">Rs {total}</h6>
                            
                         </div>
                         <p className="text-center" style={{ fontSize: "12px" }}>Shipping, taxes, and discount codes calculated at checkout. </p>

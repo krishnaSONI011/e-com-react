@@ -17,6 +17,7 @@ let Single_product = ()=>{
            
         let res = await axios.get(`http://localhost:8080/api/product/${slug}`)
         setData(res.data.product)
+        console.log(res.data.product)
         }
         fetch()
     },[])
