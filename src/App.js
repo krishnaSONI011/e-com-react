@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element ={<Main/>} ></Route>
         <Route path="auth/login" element={<Login/>} ></Route>
-        <Route path="/account" element={<Account/>}></Route>
+        <Route path="/account/*" element={<Account/>}></Route>
         <Route path ="/products/:slug" element={<SingleProduct/>} ></Route>
       </Routes>
       <Footer/>

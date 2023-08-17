@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from '../context/authContext.js'
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 export default function Acc_navComp() {
     let navigate = useNavigate();
     let [auth,setAuth]=useAuth();
@@ -26,12 +26,13 @@ export default function Acc_navComp() {
         </div>
         <div className="nav-group border-bottom">
           <div className="nav-link b-hover">
-            <div className="item  mt-3 mouse-pointer ms-4">
+          <Link to="/account/user-info">  <div className="item  mt-3 mouse-pointer ms-4">
               <span className="me-2 fs-5 fw-light ">
                 <i class="fa-regular fa-user"></i>
               </span>
               <span className="fs-5 fw-light text">My Profile</span>
             </div>
+              </Link>
           </div>
 
           <div className="nav-link b-hover">
