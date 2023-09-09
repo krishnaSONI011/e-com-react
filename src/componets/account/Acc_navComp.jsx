@@ -26,9 +26,9 @@ export default function Acc_navComp() {
         </div>
         <div className="nav-group border-bottom">
           <div className="nav-link b-hover">
-          <Link to="/account/user-info">  <div className="item  mt-3 mouse-pointer ms-4">
+          <Link to="/account/user-info" className="text-decoration-none text-dark">  <div className="item  mt-3 mouse-pointer ms-4">
               <span className="me-2 fs-5 fw-light ">
-                <i class="fa-regular fa-user"></i>
+                <i className="fa-regular fa-user"></i>
               </span>
               <span className="fs-5 fw-light text">My Profile</span>
             </div>
