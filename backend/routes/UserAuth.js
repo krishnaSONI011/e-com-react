@@ -34,7 +34,7 @@ routes.post("/register", async (req, res) => {
 
     if (existingUser) {
       return res.status(400).json({
-        success: true,
+        success: false,
         message: "Already registered. Please login.",
       });
     }
@@ -58,7 +58,7 @@ routes.post("/register", async (req, res) => {
         email: user.email,
         phone: user.phone,
         lastname: user.lastname,
-      },
+      }
     });
   } catch (error) {
     console.log(error);
@@ -92,8 +92,8 @@ routes.post("/login", async (req, res) => {
           message: "Login",
           user: {
             id: user._id,
-            name: user.name,
-            address: user.address,
+            firstname: user.firstname,
+            lastname: user.lastname,
             phone: user.phone,
           },
           token,

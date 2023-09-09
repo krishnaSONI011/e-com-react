@@ -49,7 +49,7 @@ let Sidebar = props => {
                     stroke-linejoin="round"
                   ></path>
                 </svg>
-                <span className="font-1 fs-4 ">{auth.user ==null ? "Login" : auth.user.name}</span>
+                <span className="font-1 fs-4 ">{auth.user ==null ? "Login" : auth.user.firstname}</span>
               </div>
               <span className="mouse-pointer"  onClick={handleSide} >
                 <i className="fa-solid fa-x fs-5"></i>

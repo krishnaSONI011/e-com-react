@@ -5,23 +5,30 @@ export default function Acc_navComp() {
     let navigate = useNavigate();
     let [auth,setAuth]=useAuth();
     function logout(){
-        setAuth({
-            ...auth,
-            user:null,
-            token:""
-        })
-        navigate('/')
-        localStorage.removeItem('auth')
+      setAuth({
+        ...auth,
+        user:null,
+        token:""
+      })
+      navigate('/')
+      localStorage.removeItem('auth')
     }
+    let letter = name =>{
+      let lettters  = [...name]
+      return lettters[0].toUpperCase()
+    }
+    let letter1 = letter(auth.user.firstname)
+    let letter2 = letter(auth.user.lastname)
+    
   return (
     <div className="acc w-50 font-1">
       <div className="inner-acc w-50 ">
         <div className="d-flex align-items-center justify-content-around info">
           <div className="box">
-            <span className="fs-3 text-dark ">KS</span>
+            <span className="fs-3 text-dark ">{letter1 + letter2}</span>
           </div>
           <div className="name">
-            <span className="fs-5">{auth.user=== null ? "Name Here" : auth.user.name}</span>
+            <span className="fs-5">{auth.user=== null ? "Name Here" : auth.user.firstname+" "+auth.user.lastname}</span>
           </div>
         </div>
         <div className="nav-group border-bottom">

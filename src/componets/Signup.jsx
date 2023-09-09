@@ -1,13 +1,32 @@
 import React,{useState} from "react"
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
+import axios from 'axios'
 const Signup =  ()=>{
+    // setting values 
+
+
     let [email,setEmail]= useState("");
     let [password,setPassword]=useState("");
-    let [fname,setFname]= useState("");
-    let [lname,setLname]=useState("");
-    let [mobile,setMobile]=useState("");
-    function signup(){
-        
+    let [firstname,setFname]= useState("");
+    let [lastname,setLname]=useState("");
+    let [phone,setMobile]=useState("");
+    const navigate = useNavigate();
+
+
+    // on click action is here 
+
+
+
+    async function signup(){
+        try{
+        const res = await axios.post("http://localhost:8080/api/auth/register",{firstname,email,password,phone,lastname});
+        if(res.data.success){
+            navigate("/auth/login")
+        }
+        }
+        catch(error){
+            console.log(error)
+        }
     }
     return(
         <div className='d-flex justify-content-center align-items-center flex-column d-full'>
