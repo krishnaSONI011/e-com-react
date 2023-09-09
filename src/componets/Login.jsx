@@ -1,6 +1,6 @@
 import React,{useState,} from 'react';
 import { useAuth } from './context/authContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios'
 export default function Login() {
   let navigate = useNavigate();
@@ -42,7 +42,7 @@ export default function Login() {
         </div>
         <div className='forfrom'>
             <button className='w-100 bg-dark text-white font-1 shine-button p-3 mt-4' onClick={sendData}>SIGN IN</button>
-            <button className='bg-trans w-100 font-1 mt-3'>Create an account</button>
+            <Link to="/auth/register"><button className='bg-trans w-100 font-1 mt-3'>Create an account</button></Link>
         </div>
 
       </div>

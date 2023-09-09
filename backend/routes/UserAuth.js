@@ -7,18 +7,33 @@ const routes = express.Router();
 
 routes.post("/register", async (req, res) => {
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { firstname, email, password, phone, lastname } = req.body;
 
-    if (!name || !email || !password || !phone) {
-      return res
-        .status(400)
-        .json({ error: "Name, email, password, and phone are required." });
+ 
+    // eslint-disable-next-line default-case
+    switch(true){
+      case !firstname:return res.status(400).json({
+        type:"fname",
+        error:"First Name is required"
+      })
+      case !email:return res.status(400).json({
+        type:"email",
+        error:"Email is required"
+      })
+      case !password: return res.status(400).json({
+        type:"password",
+        error:"Password is required"
+      })
+      case !phone:return res.status(400).json({
+        type:"phone",
+        error:"Phone number is required"
+      })
     }
 
     const existingUser = await userModel.findOne({ email });
 
     if (existingUser) {
-      return res.status(200).json({
+      return res.status(400).json({
         success: true,
         message: "Already registered. Please login.",
       });
@@ -27,11 +42,11 @@ routes.post("/register", async (req, res) => {
     const hashedPassword = await hashpass(password);
 
     const user = new userModel({
-      name,
+      firstname,
       email,
       password: hashedPassword,
       phone,
-      address,
+      lastname,
     });
     await user.save();
 
@@ -39,10 +54,10 @@ routes.post("/register", async (req, res) => {
       success: true,
       message: "User registered successfully.",
       user: {
-        name: user.name,
+        firstname: user.firstname,
         email: user.email,
         phone: user.phone,
-        address: user.address,
+        lastname: user.lastname,
       },
     });
   } catch (error) {

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 let UserShema = new mongoose.Schema({
-    name:{
+    firstname:{
         type:String,
         required:true
     },
@@ -20,7 +20,7 @@ let UserShema = new mongoose.Schema({
         required:true,
 
     },
-    address:{
+    lastname:{
         type:String,
         requred:true
     },

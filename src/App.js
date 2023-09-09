@@ -7,6 +7,7 @@ import Login from "./componets/Login";
 import {AuthProvider} from "./componets/context/authContext.js"
 import Account from "./componets/account/Account";
 import SingleProduct from "./componets/products/Single_product";
+import Signup from "./componets/Signup";
 function App() {
   return (
       <> 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element ={<Main/>} ></Route>
         <Route path="auth/login" element={<Login/>} ></Route>
+        <Route path="auth/register" element={<Signup/>}></Route>
         <Route path="/account/*" element={<Account/>}></Route>
         <Route path ="/products/:slug" element={<SingleProduct/>} ></Route>
       </Routes>
