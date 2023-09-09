@@ -8,7 +8,7 @@ let Account = () => {
     return (
         <div className="container d-flex">
             <Accnavcomp />
-            <div className="p-2">
+            <div className="p-2" style={{width:"73%"}}>
                 Good Morning! Krishna
                 <div className="elements">
                 
