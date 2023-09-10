@@ -119,4 +119,57 @@ routes.post("/login", async (req, res) => {
   }
 });
 
+// update user data as given.
+
+
+
+routes.post("/update", async (req, res) => {
+  try {
+    const { firstname, lastname, phone, email, id } = req.body;
+
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        error: "User ID is required",
+      });
+    }
+
+    // Check if the user with the given ID exists
+    const existingUser = await userModel.findById(id);
+
+    if (!existingUser) {
+      return res.status(404).json({
+        success: false,
+        error: "User not found",
+      });
+    }
+
+    // Update user data
+    const updatedUser = await userModel.findByIdAndUpdate(
+      id,
+      {
+        firstname,
+        lastname,
+        phone,
+        email,
+      },
+      {
+        new: true, // To return the updated user document
+      }
+    );
+
+    return res.json({
+      success: true,
+      data: updatedUser,
+    });
+  } catch (err) {
+    console.error(err); // Log the error for debugging purposes
+    return res.status(500).json({
+      success: false,
+      error: "Something went wrong",
+    });
+  }
+});
+
+
 export default routes;
