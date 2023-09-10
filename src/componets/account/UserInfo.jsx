@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { LuClipboardEdit, LuX } from "react-icons/lu";
-export default function UserInfo() {
-  let [editable, setEditable] = useState(true);
+import { useAuth } from '../context/authContext.js'
 
+export default function UserInfo() {
+  let [auth] = useAuth()
+  let [editable, setEditable] = useState(true);
+  let [firstname,setFirstname]=useState(auth.user.firstname);
+  let [lastname,setLastname]=useState(auth.user.lastname);
+  let [phone,setPhone]=useState(auth.user.phone);
+  let [email,setEmail]=useState(auth.user.email)
+  
   function click() {
     editable ? setEditable(false) : setEditable(true);
   }
@@ -29,6 +36,8 @@ export default function UserInfo() {
               type="text"
               className="form-controler "
               readOnly={editable}
+              value={firstname}
+              onChange={(e)=>setFirstname(e.target.value)}
             />
           </div>
           <div className="forfrom">
@@ -40,6 +49,9 @@ export default function UserInfo() {
               type="text"
               className="form-controler "
               readOnly={editable}
+              value={lastname}
+              onChange={(e)=>setLastname(e.target.value)}
+
             />
           </div>
         </div>
@@ -53,6 +65,9 @@ export default function UserInfo() {
               type="email"
               className="form-controler "
               readOnly={editable}
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
+              
             />
           </div>
           <div className="forfrom">
@@ -64,6 +79,9 @@ export default function UserInfo() {
               type="text"
               className="form-controler "
               readOnly={editable}
+              value={phone}
+              onChange={(e)=>setPhone(e.target.value)}
+
             />
           </div>
         </div>

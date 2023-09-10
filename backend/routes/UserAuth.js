@@ -95,6 +95,7 @@ routes.post("/login", async (req, res) => {
             firstname: user.firstname,
             lastname: user.lastname,
             phone: user.phone,
+            email:user.email
           },
           token,
         });
