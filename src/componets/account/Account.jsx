@@ -2,14 +2,15 @@ import React from "react";
 import { Routes, Route,Outlet } from 'react-router-dom';
 import Accnavcomp from "./Acc_navComp";
 import UserInfo from "./UserInfo";
-
+import { useAuth } from '../context/authContext.js'
 
 let Account = () => {
-    return (
+    let [auth] = useAuth();
+        return (
         <div className="container d-flex">
             <Accnavcomp />
-            <div className="p-2" style={{width:"73%"}}>
-                Good Morning! Krishna
+            <div className="p-2 ms-4 " style={{width:"64%"}}>
+                <p className="text-center mb-4"><span className="" style={{fontSize:"30px"}}>Good Morning!</span> <span style={{fontSize:"30px"}}>{auth.user.firstname.toUpperCase() +` ` + auth.user.lastname.toUpperCase()}</span></p>
                 <div className="elements">
                 
                 <Routes>

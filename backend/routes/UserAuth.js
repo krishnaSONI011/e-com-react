@@ -160,7 +160,13 @@ routes.post("/update", async (req, res) => {
 
     return res.json({
       success: true,
-      data: updatedUser,
+      user: {
+        id: updatedUser._id,
+        firstname: updatedUser.firstname,
+        lastname: updatedUser.lastname,
+        phone: updatedUser.phone,
+        email:updatedUser.email
+      },
     });
   } catch (err) {
     console.error(err); // Log the error for debugging purposes

@@ -1,18 +1,41 @@
 import React, { useState } from "react";
 import { LuClipboardEdit, LuX } from "react-icons/lu";
-import { useAuth } from '../context/authContext.js'
+import { useAuth } from '../context/authContext.js';
 
+import axios from "axios";
 export default function UserInfo() {
-  let [auth] = useAuth()
+  let [auth,setAuth] = useAuth()
   let [editable, setEditable] = useState(true);
   let [firstname,setFirstname]=useState(auth.user.firstname);
   let [lastname,setLastname]=useState(auth.user.lastname);
   let [phone,setPhone]=useState(auth.user.phone);
-  let [email,setEmail]=useState(auth.user.email)
-  
+  let [email,setEmail]=useState(auth.user.email);
+  let id = auth.user.id
+ 
+  async function setDetail(){
+    try{
+      const res = await axios.post("http://localhost:8080/api/auth/update",
+     {
+      firstname,
+      lastname,
+      phone,
+      email,
+      id
+    }
+      )
+      setAuth({...auth,
+        user:res.data.user
+      })
+     
+    }catch(err){
+      console.log(err)
+    }
+  }
   function click() {
     editable ? setEditable(false) : setEditable(true);
   }
+  
+
   return (
     <div className="w-100">
       <div className="details w-100 p-4">
@@ -92,9 +115,13 @@ export default function UserInfo() {
             display: `${editable ? "none" : "block"}`,
           }}
         >
-          <button className="shine-button bg-dark py-2 px-3 text-light my-4">
+          <button className="shine-button bg-dark py-2 px-3 text-light my-4"
+          onClick={setDetail}
+          >
+            
             SAVE
           </button>
+
         </div>
       </div>
     </div>

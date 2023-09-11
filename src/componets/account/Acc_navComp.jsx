@@ -21,7 +21,7 @@ export default function Acc_navComp() {
     let letter2 = letter(auth.user.lastname)
     
   return (
-    <div className="acc w-50 font-1">
+    <div className="acc font-1">
       <div className="inner-acc w-50 ">
         <div className="d-flex align-items-center justify-content-around info">
           <div className="box">

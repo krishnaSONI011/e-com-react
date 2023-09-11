@@ -200,6 +200,9 @@ p {
     border-radius: 20px;
     height: 400px;
 }
+.acc{
+    width: 23%;
+}
 .box{
     padding: 15px 20px;
     background-color: rgb(153,153,153);
