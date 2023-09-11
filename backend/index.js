@@ -5,6 +5,7 @@ import UserAuth from './routes/UserAuth.js';
 import CategoryRouter from './routes/CategoryRouter.js'
 import ProductRouter from './routes/ProductRouter.js'
 import CartRouter from './routes/CartRouter.js'
+import AddressRouter from './routes/AddressRouter.js'
 import cors from 'cors'
 
 // config dot env file 
@@ -24,7 +25,7 @@ app.use('/api/auth/', UserAuth);
 app.use('/api/category/', CategoryRouter); 
 app.use('/api/product/',ProductRouter)
 app.use('/api/cart/',CartRouter)
-
+app.use('/api/address',AddressRouter)
 app.listen(port, () => {
     console.log(`your server running at ${port}`)
 })
