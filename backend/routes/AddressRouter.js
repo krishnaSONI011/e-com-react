@@ -3,6 +3,11 @@ import addressModel from "../model/addressModel.js";
 
 const Router = express.Router();
 
+
+// address saving api 
+
+
+
 Router.post("/add",async (req,res)=>{
     try{
     const{user,firstname,lastname,addressLine1,addressLine2,company,postal,phone,city,country,state} = req.body;
@@ -32,6 +37,14 @@ Router.post("/add",async (req,res)=>{
         })
     }
 });
+
+
+
+// address fetching api 
+
+
+
+
 Router.post("/get", async (req, res) => {
     try {
       const { user } = req.body;
