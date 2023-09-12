@@ -22,7 +22,7 @@ export default function Acc_navComp() {
     
   return (
     <div className="acc font-1">
-      <div className="inner-acc w-50 ">
+      <div className="inner-acc  ">
         <div className="d-flex align-items-center justify-content-around info">
           <div className="box">
             <span className="fs-3 text-dark ">{letter1 + letter2}</span>
@@ -43,7 +43,7 @@ export default function Acc_navComp() {
           </div>
 
           <div className="nav-link b-hover">
-            <div className="item  mt-3 mouse-pointer ms-4 d-flex justify-content-between">
+          <Link to="/account/address" className="text-decoration-none text-dark"><div className="item  mt-3 mouse-pointer ms-4 d-flex justify-content-between">
               <div>
                 <span className="me-2 fs-5 fw-light ">
                 <i className="bi bi-geo-alt"></i>
@@ -56,6 +56,7 @@ export default function Acc_navComp() {
                 </span>
               </div>
             </div>
+            </Link>
           </div>
         </div>
 
