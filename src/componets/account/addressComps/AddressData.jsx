@@ -14,12 +14,12 @@ export default function AddressData(props) {
                             </div>
                                 {/* details */}
                             <div className='text-start'>
-                            <p>krishna soni</p>
-                            <p>sarafa bazar</p>
-                            <p>deeg</p>
-                            <p>Rajasthan India</p>
-                            <p>321203</p>
-                            <p>9549990097</p>
+                            <p>{props.firstname}{` ` +  props.lastname} </p>
+                            <p>{props.addressLine1}</p>
+                            <p>{props.addresssLine2}</p>
+                            <p>{props.state}{` `+ props.country}</p>
+                            <p>{props.postal}</p>
+                            <p>{props.phone}</p>
                             </div>
                     </div>
                   </div>
