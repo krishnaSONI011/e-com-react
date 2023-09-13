@@ -57,10 +57,10 @@ let Address = () => {
 
                 <div className="row mt-4">
                   {
-                    address.map((a,key)=>(
+                    address.map((a,index)=>(
                       
                       <AddressData setShow={setShow} firstname={a.firstname}
-                      lastname={a.lastname} addressLine1={a.addressLine1} addressLine2={a.addressLine2} phone ={a.phone} state={a.state} country={a.country} postal={a.postal}
+                      lastname={a.lastname} addressLine1={a.addressLine1} addressLine2={a.addressLine2} phone ={a.phone} state={a.state} country={a.country} postal={a.postal} key={index}
                       />
                     ))
                   }

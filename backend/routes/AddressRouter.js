@@ -70,5 +70,37 @@ Router.post("/get", async (req, res) => {
     }
   });
   
+// update
 
+Router.post('/update', async (req,res)=>{
+  try{
+    const{user,firstname,lastname,addressLine1,addressLine2,company,postal,phone,city,country,state} = req.body;
+    let data = await addressModel.findByIdAndUpdate(user,
+      {
+        user,
+        firstname,
+        lastname,
+        addressLine1,
+        addressLine2,
+        company,
+        postal,
+        phone,
+        city,
+        country,
+        state
+    },
+    {new:true}
+    );
+    return res.status(200).json({
+      success:true,
+      data
+    })
+  }catch(err){
+    console.log(err);
+    return res.status(500).json({
+      success:false,
+      message:"internal server error"
+    })
+  }
+})
 export default Router;

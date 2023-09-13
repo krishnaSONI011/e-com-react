@@ -5,7 +5,7 @@ export default function AddressData(props) {
 
   return (
    <>
-   <div className="col-md-4">
+   <div className="col-md-4" key={props.key}>
                     <div className="add-address details p-2">
                         {/* top bar */}
                             <div className='d-flex justify-content-end'>
