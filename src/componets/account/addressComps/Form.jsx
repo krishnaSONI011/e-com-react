@@ -1,27 +1,40 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { LuXCircle } from "react-icons/lu";
 import axios from 'axios';
 import {useAuth} from '../../context/authContext.js'
-
+import {Link} from 'react-router-dom'
 let Form = props =>{
+    let data = JSON.parse(localStorage.getItem("address"));
     
-    let [auth] = useAuth()
-   console.log(auth.user)
-    function  hide(){
-        props.setShow(true)
-    }
-    let [firstname,setFirstname] = useState(props.data.btn === "new" ? "" : props.firstname)
-    let [lastname,setLastname] = useState(props.data.btn === "new" ? "" : props.lastname)
-    let [addressLine1,setAddressLine1] = useState(props.data.btn === "new" ? "" : props.addressLine1)
-    let [addressLine2,setAddressLine2] = useState(props.data.btn === "new" ? "" : props.addressLine2)
-    let [company,setCompany] = useState(props.data.btn === "new" ? "" : props.company)
-    let [postal,setPostal] = useState(props.data.btn === "new" ? "" : props.postal)
-    let [phone,setPhone] = useState(props.data.btn === "new" ? "" : props.phone)
-    let [city,setCity] = useState(props.data.btn === "new" ? "" : props.city)
-    let [country,setCountry] = useState(props.data.btn === "new" ? "" : props.country)
-    let [state,setState] = useState(props.data.btn === "new" ? "" : props.state);
+    // useEffect(()=>{
+        //     function fetch(){
+            //         let res = JSON.parse(localStorage.getItem("address"));
+            //     setData(res)
+            //     }
+            //     fetch()
+            // },[data])
+            
+            console.log(data)
+            let [auth] = useAuth()
+            
+            function  hide(){
+                props.setShow(true)
+                localStorage.removeItem('address');
+            }
+            
+            let [firstname,setFirstname] = useState(!data ? "" : data[0])
+            
+            let [lastname,setLastname] = useState(!data ?   "" : data[1])
+            let [addressLine1,setAddressLine1] = useState(props.data.btn === "new" ? "" : data[2])
+    let [addressLine2,setAddressLine2] = useState(props.data.btn === "new" ? "" : data[3])
+    let [company,setCompany] = useState(props.data.btn === "new" ? "" : data[9])
+    let [postal,setPostal] = useState(props.data.btn === "new" ? "" : data[6])
+    let [phone,setPhone] = useState(props.data.btn === "new" ? "" : data[7])
+    let [city,setCity] = useState(props.data.btn === "new" ? "" : data[8])
+    let [country,setCountry] = useState(props.data.btn === "new" ? "" : data[5])
+    let [state,setState] = useState(props.data.btn === "new" ? "" : data[4]);
 
-
+    console.log(firstname)
     // function to save data;
  async function save(){
     try{
@@ -62,11 +75,11 @@ let Form = props =>{
                 <div className='col-md-7 col-sm-7'>
                     <p className='font-1 text-end' style={{
                         fontSize:"20px"
-                    }}>Edit Address</p>
+                    }}>{props.data.btn === "new " ? "Add" : "Edit"} Address</p>
 
                 </div>
                     <div className='col-md-5 text-end col-sm-5 fs-5 '>
-                    <button className='bg-trans' onClick={hide}><LuXCircle/></button>
+                    <Link to={"/account/address"}><button className='bg-trans' onClick={hide}><LuXCircle/></button></Link>
                     </div>
                     {/* Cross button */}
 

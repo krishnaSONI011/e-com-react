@@ -23,7 +23,7 @@ const AddressSchema = new mongoose.Schema({
     company:{
         type:String
     },
-    postalCode:{
+    postal:{
         type:String
     },
     phone:{

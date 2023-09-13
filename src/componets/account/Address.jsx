@@ -3,11 +3,13 @@ import { LuMapPin } from "react-icons/lu";
 import AddressData from "./addressComps/AddressData";
 import Form from './addressComps/Form';
 import axios from 'axios'
-import {useAuth} from "../context/authContext.js"
+import {Routes, Route,Outlet,Link} from 'react-router-dom'
+// import {useAuth} from "../context/authContext.js"
 
 let Address = () => {
-  let [auth] = useAuth()
+  let auth = JSON.parse(localStorage.getItem('auth'))
   let user = auth.user.id
+
   let [show,setShow]= useState(true);
   let [data,setData] = useState({
     id:'',
@@ -46,11 +48,11 @@ let Address = () => {
                     <div className="add-mark fs-3">
                         <LuMapPin/>
                     </div>
-                    <button className="address-line font-1 bg-dark text-light py-1 px-3 border-radius mt-1"
+                    <Link to={"/account/address/from"}><button className="address-line font-1 bg-dark text-light py-1 px-3 border-radius mt-1"
                     onClick={addAddress}
                     >
                         Add New Address
-                    </button>
+                    </button></Link>
                 </div>
                 {/* dynamic address data*/}
 
@@ -61,6 +63,7 @@ let Address = () => {
                       
                       <AddressData setShow={setShow} firstname={a.firstname}
                       lastname={a.lastname} addressLine1={a.addressLine1} addressLine2={a.addressLine2} phone ={a.phone} state={a.state} country={a.country} postal={a.postal} key={index}
+                      id={a._id} city={a.city} setData = {setData}
                       />
                     ))
                   }
@@ -72,9 +75,13 @@ let Address = () => {
             <div style={{
               display: show ? "none" : ""
             }}>
-              <Form setShow={setShow}
+              <Routes>
+                <Route path={'/from'} element={<Form setShow={setShow}
                 data={data}
-              />
+              />}></Route>
+              </Routes>
+              <Outlet/>
+              
             </div>
         </div>
       </div>

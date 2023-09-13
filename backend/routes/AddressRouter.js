@@ -74,10 +74,10 @@ Router.post("/get", async (req, res) => {
 
 Router.post('/update', async (req,res)=>{
   try{
-    const{user,firstname,lastname,addressLine1,addressLine2,company,postal,phone,city,country,state} = req.body;
-    let data = await addressModel.findByIdAndUpdate(user,
+    const{id,firstname,lastname,addressLine1,addressLine2,company,postal,phone,city,country,state} = req.body;
+    let data = await addressModel.findByIdAndUpdate(id,
       {
-        user,
+        
         firstname,
         lastname,
         addressLine1,
