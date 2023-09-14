@@ -21,8 +21,8 @@ function updatePen(){
                         {/* top bar */}
                             <div className='d-flex justify-content-end'>
                                   <Link to={"/account/address/from"} className="text-dark">  <p className='me-2 fs-5 mouse-pointer' onClick={updatePen}><LuPen/></p></Link>
-                                    <p className='fs-5 mouse-pointer'><LuX/></p>
-                            </div>
+                                  <Link to="/account/address/delete">  <p className='fs-5 mouse-pointer'><LuX/></p></Link> 
+                            </div> 
                                 {/* details */}
                             <div className='text-start'>
                             <p>{props.firstname}{` ` +  props.lastname} </p>

@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import { LuXCircle } from "react-icons/lu";
 import axios from 'axios';
 import {useAuth} from '../../context/authContext.js'

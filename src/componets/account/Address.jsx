@@ -4,6 +4,7 @@ import AddressData from "./addressComps/AddressData";
 import Form from './addressComps/Form';
 import axios from 'axios'
 import {Routes, Route,Outlet,Link} from 'react-router-dom'
+import Delete from "./addressComps/Delete";
 // import {useAuth} from "../context/authContext.js"
 
 let Address = () => {
@@ -41,6 +42,7 @@ let Address = () => {
   },[])
   return (
     <>
+      
       <div className="w-100">
         <div className="details w-100 p-4">
             <div className="show-address" style={{display:show ? "" : "none"}}>
@@ -79,10 +81,15 @@ let Address = () => {
                 <Route path={'/from'} element={<Form setShow={setShow}
                 data={data}
               />}></Route>
+              
               </Routes>
               <Outlet/>
-              
             </div>
+            <Routes>
+            <Route path="/delete" element={<Delete/>}  />
+              
+            </Routes>
+            <Outlet/>
         </div>
       </div>
     </>
