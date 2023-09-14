@@ -102,5 +102,25 @@ Router.post('/update', async (req,res)=>{
       message:"internal server error"
     })
   }
+});
+// delete 
+
+Router.post("/delete", async(req,res)=>{
+  try{
+   const {id} = req.body
+   await addressModel.findByIdAndDelete(id);
+   return res.status(200).json({
+       success: true,
+       message:"address deleted "
+   })
+  }
+  catch(err){
+    console.log(err);
+    return res.status(500).json({
+      success:false,
+      message:"internal server error",
+      err
+    })
+  }
 })
 export default Router;
