@@ -3,7 +3,11 @@ import { LuPen,LuX } from "react-icons/lu";
 import {Link} from 'react-router-dom'
 export default function AddressData(props) {
  
-  
+function setid(){
+  let id = props.id;
+
+  localStorage.setItem('address_id',JSON.stringify(id))
+}
 function updatePen(){
   let address = [props.firstname,props.lastname,props.addressLine1,props.addressLine2,props.state,props.country,props.postal,props.phone,props.city];
   localStorage.setItem('address',JSON.stringify(address));
@@ -21,7 +25,7 @@ function updatePen(){
                         {/* top bar */}
                             <div className='d-flex justify-content-end'>
                                   <Link to={"/account/address/from"} className="text-dark">  <p className='me-2 fs-5 mouse-pointer' onClick={updatePen}><LuPen/></p></Link>
-                                  <Link to="/account/address/delete">  <p className='fs-5 mouse-pointer'><LuX/></p></Link> 
+                                  <Link to="/account/address/delete" onClick={setid}>  <p className='fs-5 mouse-pointer'><LuX/></p></Link> 
                             </div> 
                                 {/* details */}
                             <div className='text-start'>

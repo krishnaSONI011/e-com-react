@@ -1,12 +1,26 @@
 import React,{useState}  from "react";
 import { LuX } from "react-icons/lu";
 import {useNavigate} from 'react-router-dom'
-let Delete = ()=>{
+import axios from 'axios'
+let Delete = (props)=>{
     let navigate = useNavigate()
     let[scroll] = useState(window.scrollY)
 
     function xbtn(){
         navigate("/account/address");
+    }
+   async function deleteFun(){
+        try{    
+            let id = JSON.parse(localStorage.getItem('address_id'))
+            let res = await axios.post("http://localhost:8080/api/address/delete",{id});
+            if(res.data.success){
+                navigate("/account/address");
+                props.setShow2(Date.now());
+                // its just for triger the useEffect
+            }
+        }catch(err){
+            console.log(err)
+        }
     }
     return(
         <>
@@ -27,10 +41,10 @@ let Delete = ()=>{
 
                 <div className="d-flex ">
                     <div className="w-50 border-end py-2 c-btn mouse-pointer">
-                        <p className="text-center ">Cancle</p>
+                        <p className="text-center " onClick={xbtn}>Cancle</p>
                     </div>
                     <div className="w-50 py-2 done-btn mouse-pointer">
-                        <p className="text-center ">Ok</p>
+                        <p className="text-center " onClick={deleteFun}>Ok</p>
                     </div>
                 </div>
            </div>

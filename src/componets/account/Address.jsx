@@ -5,13 +5,16 @@ import Form from './addressComps/Form';
 import axios from 'axios'
 import {Routes, Route,Outlet,Link} from 'react-router-dom'
 import Delete from "./addressComps/Delete";
+
 // import {useAuth} from "../context/authContext.js"
 
 let Address = () => {
+ 
   let auth = JSON.parse(localStorage.getItem('auth'))
   let user = auth.user.id
 
   let [show,setShow]= useState(true);
+  let [show2,setShow2]= useState(true);
   let [data,setData] = useState({
     id:'',
     btn:''
@@ -39,7 +42,8 @@ let Address = () => {
     }
    }
    fetch()
-  },[])
+  },[show,show2]);
+
   return (
     <>
       
@@ -86,7 +90,7 @@ let Address = () => {
               <Outlet/>
             </div>
             <Routes>
-            <Route path="/delete" element={<Delete/>}  />
+            <Route path="/delete" element={<Delete setShow2={setShow2} />}  />
               
             </Routes>
             <Outlet/>

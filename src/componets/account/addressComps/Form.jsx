@@ -2,10 +2,10 @@ import React,{useState} from 'react'
 import { LuXCircle } from "react-icons/lu";
 import axios from 'axios';
 import {useAuth} from '../../context/authContext.js'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 let Form = props =>{
     let data = JSON.parse(localStorage.getItem("address"));
-    
+    let navigate = useNavigate()
     // useEffect(()=>{
         //     function fetch(){
             //         let res = JSON.parse(localStorage.getItem("address"));
@@ -54,15 +54,22 @@ let Form = props =>{
         console.log(res.data.message)
         if(res.data.success){
 
+            navigate("/account/address")
             props.setShow(true)
         }
     }catch(err) {
         console.log(err)
+        
     }
  }
- function update(){
+async function update(){
     try{
-
+        let id = props.data.id
+      let res = await axios.post("http://localhost:8080/api/address/update",{id,firstname,lastname,addressLine1,addressLine2,company,postal,phone,city,country,state})
+      if(res.data.success){
+        navigate("/account/address");
+        props.setShow(true)
+      }
     }
     catch(err){
         console.log(err)
