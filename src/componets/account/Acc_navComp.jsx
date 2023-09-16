@@ -96,12 +96,12 @@ export default function Acc_navComp() {
         </div>
         <div className="nav-group border-bottom">
         <div className="nav-link b-hover">
-            <div className="item  mt-3 mouse-pointer ms-4">
+        <Link to="/account/change-password" className="text-decoration-none text-dark"> <div className="item  mt-3 mouse-pointer ms-4">
               <span className="me-2 fs-5 fw-light ">
               <i className="bi bi-lock"></i>
               </span>
               <span className="fs-5 fw-light text">Change Password</span>
-            </div>
+            </div></Link>
 
           </div>
           <div className="nav-link b-hover" onClick={logout}>

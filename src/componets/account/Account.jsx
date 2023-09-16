@@ -4,6 +4,7 @@ import Accnavcomp from "./Acc_navComp";
 import UserInfo from "./UserInfo";
 // import { useAuth } from '../context/authContext.js'
 import Address from "./Address";
+import ChangePass from "./ChangePass";
 
 let Account = () => {
     let auth = JSON.parse(localStorage.getItem("auth"))
@@ -18,6 +19,7 @@ let Account = () => {
                 <Routes>
                         <Route path="/user-info" element={<UserInfo />} ></Route>
                         <Route path="/address/*" element={<Address/>} ></Route>
+                        <Route path="/change-password" element={<ChangePass/>} />
                         </Routes>
                     <Outlet/>
 
